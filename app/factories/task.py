@@ -2,14 +2,17 @@ import sys
 from enum import Enum
 from app.tasks.base import AppTask
 from app.tasks.test_task import TestTask
+from app.tasks.bp_ospf_auth_task import BPOSPFAuthTask
 
 
 class TaskOption(Enum):
     TEST = "Test Task"
+    BP_OSPF_AUTH = "BP OSPF Auth"
 
 
 TASK_FACTORIES = {
     TaskOption.TEST: TestTask,
+    TaskOption.BP_OSPF_AUTH: BPOSPFAuthTask,
 }
 
 
