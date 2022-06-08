@@ -1,0 +1,5 @@
+======== {{ hostname }} ========
+{% for index in range(ospf_nbrs_full|length) %}{% if ospf_nbrs_full[index] == 1 %}
+router ospf {{ ospf_id[index] }} area 0 interface {{ ospf_int[index] }} message-digest-key 1 md5 clear 0spf1PR4NaUTH
+router ospf {{ ospf_id[index] }} area 0 interface {{ ospf_int[index] }} authentication message-digest
+{% endif %}{% endfor %}
