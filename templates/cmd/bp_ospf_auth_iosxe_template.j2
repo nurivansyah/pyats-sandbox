@@ -1,6 +1,6 @@
 ======== {{ hostname }} ========
 {% for index in range(ospf_nbrs_full|length) %}{% if ospf_nbrs_full[index] == 1 %}
 interface {{ ospf_int[index] }}
-  ip ospf message-digest-key 1 md5 0spf1PR4NaUTH
+  ip ospf message-digest-key 1 md5 0sPf4UtHk3Y
   ip ospf authentication message-digest
 {% endif %}{% endfor %}
