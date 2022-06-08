@@ -3,16 +3,19 @@ from enum import Enum
 from app.tasks.base import AppTask
 from app.tasks.test_task import TestTask
 from app.tasks.bp_ospf_auth_task import BPOSPFAuthTask
+from app.tasks.show_pre_post_check_task import ShowPrePostCheckTask
 
 
 class TaskOption(Enum):
     TEST = "Test Task"
     BP_OSPF_AUTH = "BP OSPF Auth"
+    SHOW_PRE_POST_CHECK = "Show Pre/Post Check"
 
 
 TASK_FACTORIES = {
     TaskOption.TEST: TestTask,
     TaskOption.BP_OSPF_AUTH: BPOSPFAuthTask,
+    TaskOption.SHOW_PRE_POST_CHECK: ShowPrePostCheckTask,
 }
 
 
