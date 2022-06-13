@@ -20,11 +20,15 @@ def main():
     rtr_list = get_device_list()
 
     ## start task per device with parallel processing
-    for rtr in rtr_list:
-        p = multiprocessing.Process(
+    processes = [
+        multiprocessing.Process(
             target=task.start, args=(tb, exporter, rtr, conn_cli_proxy)
         )
+        for rtr in rtr_list
+    ]
+    for p in processes:
         p.start()
+    for p in processes:
         p.join()
 
     print("\n======== ALL TASK DONE ======== \n")
