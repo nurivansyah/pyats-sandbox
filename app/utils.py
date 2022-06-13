@@ -43,7 +43,7 @@ def get_template(template_file: str):
         return Template(f.read(), keep_trailing_newline=True)
 
 
-def get_custom_dialog(self):
+def get_custom_dialog():
     return Dialog(
         [
             Statement(
