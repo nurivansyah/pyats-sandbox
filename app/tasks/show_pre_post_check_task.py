@@ -20,7 +20,9 @@ class ShowPrePostCheckTask:
         )
         device.connect()
 
-        result = device.run_cmd(CmdOption.SHOW_PRE_POST_CHECK_IOS)
+        result = device.run_cmd(
+            CmdOption("show_pre_post_check_" + device.get_attr("os"))
+        )
 
         filename = (
             str(get_current_date())

@@ -1,0 +1,62 @@
+show running-config
+show ip interface brief
+show ip interface brief | in up
+show ip interface brief | in down
+show interface status 
+show interface | include proto|cription|bits|cast
+show interface description
+show interface counters storm-control
+show interface summary
+show etherchannel summary
+show ip arp
+show mac-address-table dynamic
+show mac address-table dynamic
+show cdp neighbors
+show cdp neighbors detail
+show ip vrf interface
+show ip vrf detail
+show ip cef vrf * summary
+show mpls ldp neighbor
+show mpls ldp neighbor detail
+show mpls l2transport vc
+show mpls forwarding-table
+show bgp ipv4 unicast summary
+show bgp vpnv4 unicast all summary
+show ip ospf interface
+show ip ospf interface brief
+show ip ospf neighbor
+show ip ospf neighbor detail
+show clns neighbor
+show ip route
+show ip sla statistics
+show ip sla summary
+show ip route summary
+show vlan
+show vlan brief
+show vlan internal usage
+show standby brief
+show vrrp brief
+show redundancy
+show module
+show power
+show inventory
+show inventory raw
+show environment
+show environment status
+show temp
+show diagnostic status
+show diagnostic result
+show platform hardware capacity cpu
+show processes cpu history
+show processes cpu sorted
+show memory statistics
+show memory statistics history
+show history all
+dir all
+show log
+show version
+show runn | include boot
+show user
+show clock
+show platform
+show platform hardware pp active feature mpls statistic

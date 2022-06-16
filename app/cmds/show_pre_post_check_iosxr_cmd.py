@@ -1,10 +1,10 @@
-class ShowPrePostCheckIOSCmd:
+class ShowPrePostCheckIOSXRCmd:
     def __init__(self, connected_device):
         self.device = connected_device
 
     def prepare_data(self) -> dict:
 
-        command_file = "./templates/cmd/pre_post_check/ios.txt"
+        command_file = "./templates/cmd/pre_post_check/iosxr.txt"
         with open(command_file, "r") as f:
             command_list = f.readlines()
 
