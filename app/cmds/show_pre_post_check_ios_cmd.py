@@ -4,7 +4,7 @@ class ShowPrePostCheckIOSCmd:
 
     def prepare_data(self) -> dict:
 
-        command_file = "./templates/prepostcheck_ios.txt"
+        command_file = "./templates/cmd/pre_post_check/ios.txt"
         with open(command_file, "r") as f:
             command_list = f.readlines()
 
