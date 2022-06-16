@@ -1,0 +1,32 @@
+show run
+show interface
+show cdp neighbor
+show ospf vrf all neighbor
+show bgp vpnv4 unicast summary
+show bgp vrf all summary
+show mpls ldp neighbor
+show rsvp neighbor
+show mpls traffic-eng tunnel
+show bfd session
+show cef summary
+show version brief
+show logging
+show proc cpu
+show memory summary
+show redundancy
+admin show run
+admin show version
+admin show platform
+admin show hw-module fpd location all
+admin show inventory
+admin show install active
+admin show license udi
+admin show license
+admin show license active
+dir disk0:
+dir disk1:
+dir harddisk:
+dir disk0: location 0/rsp1/cpu0
+dir disk1: location 0/rsp1/cpu0
+dir harddisk: location 0/rsp1/cpu0
+show arp
