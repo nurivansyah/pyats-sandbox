@@ -5,6 +5,7 @@ from app.tasks.test_task import TestTask
 from app.tasks.bp_ospf_auth_task import BPOSPFAuthTask
 from app.tasks.show_pre_post_check_task import ShowPrePostCheckTask
 from app.tasks.check_ospf_connectivity_task import CheckOSPFConnectivityTask
+from app.tasks.bp_dampening_task import BPDampeningTask
 
 
 class TaskOption(Enum):
@@ -12,6 +13,7 @@ class TaskOption(Enum):
     BP_OSPF_AUTH = "BP OSPF Auth"
     SHOW_PRE_POST_CHECK = "Show Pre/Post Check"
     CHECK_OSPF_CONNECTIVITY = "Check OSPF Connectivity"
+    BP_DAMPENING = "BP Interface Dampening"
 
 
 TASK_FACTORIES = {
@@ -19,15 +21,16 @@ TASK_FACTORIES = {
     TaskOption.BP_OSPF_AUTH: BPOSPFAuthTask,
     TaskOption.SHOW_PRE_POST_CHECK: ShowPrePostCheckTask,
     TaskOption.CHECK_OSPF_CONNECTIVITY: CheckOSPFConnectivityTask,
+    TaskOption.BP_DAMPENING: BPDampeningTask,
 }
 
 
-def get_task(task_name: str) -> AppTask:
+def get_task(task_name: TaskOption) -> AppTask:
     try:
         task = TASK_FACTORIES[task_name]
         return task
     except KeyError:
-        sys.exit("Unknown task option : " + task_name)
+        sys.exit("Unknown task option : " + task_name.value)
 
 
 def select_task() -> AppTask:

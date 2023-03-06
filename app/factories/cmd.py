@@ -8,6 +8,7 @@ from app.cmds.show_pre_post_check_iosxe_cmd import ShowPrePostCheckIOSXECmd
 from app.cmds.show_pre_post_check_iosxr_cmd import ShowPrePostCheckIOSXRCmd
 from app.cmds.check_ospf_connectivity_iosxe_cmd import CheckOSPFConnectivityIOSXECmd
 from app.cmds.check_ospf_connectivity_iosxr_cmd import CheckOSPFConnectivityIOSXRCmd
+from app.cmds.bp_dampening_iosxr_cmd import BPDampeningIOSXRCmd
 
 
 class CmdOption(Enum):
@@ -19,6 +20,7 @@ class CmdOption(Enum):
     SHOW_PRE_POST_CHECK_IOSXR = "show_pre_post_check_iosxr"
     CHECK_OSPF_CONNECTIVITY_IOSXE = "check_ospf_connectivity_iosxe"
     CHECK_OSPF_CONNECTIVITY_IOSXR = "check_ospf_connectivity_iosxr"
+    BP_DAMPENING_IOSXR = "bp_dampening_iosxr"
 
 
 CMD_FACTORIES = {
@@ -30,10 +32,11 @@ CMD_FACTORIES = {
     CmdOption.SHOW_PRE_POST_CHECK_IOSXR: ShowPrePostCheckIOSXRCmd,
     CmdOption.CHECK_OSPF_CONNECTIVITY_IOSXE: CheckOSPFConnectivityIOSXECmd,
     CmdOption.CHECK_OSPF_CONNECTIVITY_IOSXR: CheckOSPFConnectivityIOSXRCmd,
+    CmdOption.BP_DAMPENING_IOSXR: BPDampeningIOSXRCmd,
 }
 
 
-def get_cmd(cmd_name: str, connected_device) -> ConnectedDeviceCmd:
+def get_cmd(cmd_name: CmdOption, connected_device) -> ConnectedDeviceCmd:
     try:
         cmd = CMD_FACTORIES[cmd_name]
         return cmd(connected_device)
